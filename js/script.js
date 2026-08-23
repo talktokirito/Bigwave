@@ -155,7 +155,7 @@
   clientsToggle.addEventListener("click", function () {
     var expanded = clientsGrid.classList.toggle("expanded");
     clientsToggle.setAttribute("aria-expanded", String(expanded));
-    clientsToggle.textContent = expanded ? "Show Fewer Clients" : "View All 80+ Clients";
+    clientsToggle.textContent = expanded ? "Show Fewer Clients" : "View All 89+ Clients";
     if (!expanded) {
       document.getElementById("clients").scrollIntoView({ behavior: "smooth", block: "start" });
     }
