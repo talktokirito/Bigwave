@@ -195,4 +195,73 @@
     formNote.textContent = "Opening your email client to send the message...";
     formNote.className = "form-note success";
   });
+
+  // ---------- Service detail modal ----------
+  var serviceDetails = {
+    "svc-supply": {
+      title: "BMU Cradle New Supply & Installation",
+      text: "At Big Wave, we specialize in the comprehensive process of BMU Cradle supply and installation. Our dedicated team is committed to delivering top-notch services, ensuring precision in the supply and seamless installation of Building Maintenance Unit (BMU) Cradles. From meticulous planning to expert execution, we prioritize safety, efficiency and client satisfaction in every step of the process. Trust us to elevate your building maintenance standards with our reliable BMU Cradle supply and installation services.",
+      items: [
+        "BMU Roof Trolley Machine & Cradle",
+        "Davits System & Cradle",
+        "BMU Monorail & Cradle",
+        "Telescopic BMU & Cradle"
+      ]
+    }
+  };
+
+  var modalOverlay = document.getElementById("modalOverlay");
+  var modalDialog = document.getElementById("serviceModal");
+  var modalTitle = document.getElementById("modalTitle");
+  var modalText = document.getElementById("modalText");
+  var modalList = document.getElementById("modalList");
+  var modalClose = document.getElementById("modalClose");
+  var modalTrigger = null;
+
+  function openModal(id) {
+    var data = serviceDetails[id];
+    if (!data) return;
+    modalTrigger = document.activeElement;
+    modalTitle.textContent = data.title;
+    modalText.textContent = data.text;
+    modalList.innerHTML = "";
+    data.items.forEach(function (item) {
+      var li = document.createElement("li");
+      li.textContent = item;
+      modalList.appendChild(li);
+    });
+    modalOverlay.hidden = false;
+    requestAnimationFrame(function () {
+      modalOverlay.classList.add("open");
+    });
+    document.body.classList.add("modal-lock");
+    modalDialog.focus();
+  }
+
+  function closeModal() {
+    if (!modalOverlay.classList.contains("open")) return;
+    modalOverlay.classList.remove("open");
+    document.body.classList.remove("modal-lock");
+    if (modalTrigger) modalTrigger.focus();
+  }
+
+  document.querySelectorAll("[aria-controls='serviceModal']").forEach(function (card) {
+    card.addEventListener("click", function () {
+      openModal(card.id);
+    });
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(card.id);
+      }
+    });
+  });
+
+  modalClose.addEventListener("click", closeModal);
+  modalOverlay.addEventListener("click", function (e) {
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
 })();
