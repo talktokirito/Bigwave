@@ -155,10 +155,8 @@
   clientsToggle.addEventListener("click", function () {
     var expanded = clientsGrid.classList.toggle("expanded");
     clientsToggle.setAttribute("aria-expanded", String(expanded));
-    clientsToggle.textContent = expanded ? "Show Fewer Clients" : "View All 89+ Clients";
-    if (!expanded) {
-      document.getElementById("clients").scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    clientsToggle.textContent = expanded ? "Show Fewer Clients" : "View All Clients";
+    document.getElementById("clients").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   // ---------- Contact form (static site: no backend, opens mail client) ----------
