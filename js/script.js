@@ -149,14 +149,24 @@
   }
 
   // ---------- Clients: view all toggle ----------
-  var clientsGrid = document.getElementById("clientsGrid");
   var clientsToggle = document.getElementById("clientsToggle");
+  var clientsExtraGroups = document.getElementById("clientsExtraGroups");
 
   clientsToggle.addEventListener("click", function () {
-    var expanded = clientsGrid.classList.toggle("expanded");
+    clientsExtraGroups.hidden = !clientsExtraGroups.hidden;
+    var expanded = !clientsExtraGroups.hidden;
     clientsToggle.setAttribute("aria-expanded", String(expanded));
     clientsToggle.textContent = expanded ? "Show Fewer Clients" : "View All Clients";
     document.getElementById("clients").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // ---------- Clients: per-group expand/collapse ----------
+  document.querySelectorAll(".client-group-toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var group = btn.closest(".client-group");
+      var expanded = group.classList.toggle("expanded");
+      btn.setAttribute("aria-expanded", String(expanded));
+    });
   });
 
   // ---------- Contact form (static site: no backend, opens mail client) ----------
