@@ -280,7 +280,14 @@ svg { width: 100%; height: 100%; }
 .team-landline a:hover { color: var(--blue-500); }
 
 /* ============ Clients ============ */
-.clients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 50px; }
+.clients-grid { margin-top: 50px; }
+.client-group { margin-top: 36px; }
+.client-group:first-child { margin-top: 0; }
+.client-group-title {
+  font-size: 0.85rem; font-weight: 700; color: var(--navy-900); text-transform: uppercase;
+  letter-spacing: 0.8px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.client-group-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .client-chip {
   background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px;
   font-size: 0.88rem; font-weight: 500; color: var(--ink-700); text-align: center;
@@ -383,7 +390,7 @@ body.modal-lock { overflow: hidden; }
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+  .client-group-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
@@ -412,7 +419,7 @@ body.modal-lock { overflow: hidden; }
   .why-grid { grid-template-columns: 1fr; }
   .mv-grid { grid-template-columns: 1fr; }
   .team-card { flex-basis: 100%; max-width: 420px; }
-  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  .client-group-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; padding: 50px 20px 30px; }
   .form-row { grid-template-columns: 1fr; }
   .hero-actions .btn { width: 100%; }
@@ -420,6 +427,6 @@ body.modal-lock { overflow: hidden; }
 }
 
 @media (max-width: 420px) {
-  .clients-grid { grid-template-columns: 1fr 1fr; }
+  .client-group-grid { grid-template-columns: 1fr 1fr; }
   .brand-text small { display: none; }
 }
