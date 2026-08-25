@@ -183,19 +183,25 @@
       return;
     }
 
-    var name = document.getElementById("name").value.trim();
+    var name = document.getElementById("clientName").value.trim();
     var phone = document.getElementById("phone").value.trim();
+    var projectSite = document.getElementById("projectSite").value.trim();
     var email = document.getElementById("email").value.trim();
+    var projectLocation = document.getElementById("projectLocation").value.trim();
+    var state = document.getElementById("state").value;
     var service = document.getElementById("service").value;
     var message = document.getElementById("message").value.trim();
 
     var subject = encodeURIComponent("Website Enquiry from " + name);
     var body = encodeURIComponent(
-      "Name: " + name + "\n" +
+      "Client Name: " + name + "\n" +
+      "Project / Site Name: " + (projectSite || "Not specified") + "\n" +
+      "Project Location / Address: " + (projectLocation || "Not specified") + "\n" +
+      "State / Emirate: " + (state || "Not specified") + "\n" +
       "Phone: " + phone + "\n" +
       "Email: " + email + "\n" +
       "Service Required: " + (service || "Not specified") + "\n\n" +
-      "Message:\n" + message
+      "Additional Message:\n" + message
     );
 
     window.location.href = "mailto:info@bigwavetechs.com?subject=" + subject + "&body=" + body;
@@ -207,13 +213,21 @@
   // ---------- Service detail modal ----------
   var serviceDetails = {
     "svc-supply": {
-      title: "BMU Cradle New Supply & Installation",
-      text: "At Big Wave, we specialize in the comprehensive process of BMU Cradle supply and installation. Our dedicated team is committed to delivering top-notch services, ensuring precision in the supply and seamless installation of Building Maintenance Unit (BMU) Cradles. From meticulous planning to expert execution, we prioritize safety, efficiency and client satisfaction in every step of the process. Trust us to elevate your building maintenance standards with our reliable BMU Cradle supply and installation services.",
+      title: "New Sales, Supply & Installation",
+      text: "At Big Wave, we specialize in the comprehensive process of new sales, supply and installation across the full range of BMU Cradle, Monorail and access equipment. Our dedicated team is committed to delivering top-notch services, ensuring precision in the supply and seamless installation of Building Maintenance Unit (BMU) Cradle and Monorail systems. From meticulous planning to expert execution, we prioritize safety, efficiency and client satisfaction in every step of the process. Trust us to elevate your building maintenance standards with our reliable new sales, supply and installation services.",
       items: [
-        "BMU Roof Trolley Machine & Cradle",
-        "Davits System & Cradle",
-        "BMU Monorail & Cradle",
-        "Telescopic BMU & Cradle"
+        "BMU's Cradle",
+        "Monorail with Cradle",
+        "Telescopic Jib BMU's",
+        "Articulated BMU's",
+        "Economical BMU's",
+        "Fixed Jib BMU's",
+        "Fully Customized BMU's",
+        "Gantry",
+        "Davit System",
+        "Dumbwaiter",
+        "Man Lift",
+        "Scissor Lift"
       ]
     }
   };
@@ -272,4 +286,59 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeModal();
   });
+
+  // ---------- Our Equipment slider ----------
+  var equipmentItems = Array.prototype.slice.call(document.querySelectorAll(".equipment-item"));
+  var equipmentSlides = Array.prototype.slice.call(document.querySelectorAll(".equipment-slide"));
+
+  if (equipmentItems.length && equipmentSlides.length) {
+    var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var equipmentIndex = Math.max(0, equipmentSlides.findIndex(function (s) { return s.classList.contains("is-active"); }));
+    var equipmentTimer = null;
+
+    function setEquipmentActive(index) {
+      equipmentIndex = index;
+      var targetId = equipmentSlides[index].dataset.slide;
+      equipmentSlides.forEach(function (slide, i) {
+        slide.classList.toggle("is-active", i === index);
+      });
+      equipmentItems.forEach(function (item) {
+        var active = item.dataset.target === targetId;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    function startEquipmentSlider() {
+      stopEquipmentSlider();
+      if (prefersReducedMotion) return;
+      equipmentTimer = setInterval(function () {
+        setEquipmentActive((equipmentIndex + 1) % equipmentSlides.length);
+      }, 3500);
+    }
+
+    function stopEquipmentSlider() {
+      if (equipmentTimer) {
+        clearInterval(equipmentTimer);
+        equipmentTimer = null;
+      }
+    }
+
+    equipmentItems.forEach(function (item) {
+      item.addEventListener("click", function () {
+        var targetId = item.dataset.target;
+        var isCurrentlyActive = item.classList.contains("is-active");
+        if (isCurrentlyActive && !equipmentTimer) {
+          startEquipmentSlider();
+          return;
+        }
+        var index = equipmentSlides.findIndex(function (s) { return s.dataset.slide === targetId; });
+        if (index === -1) return;
+        stopEquipmentSlider();
+        setEquipmentActive(index);
+      });
+    });
+
+    startEquipmentSlider();
+  }
 })();
