@@ -232,35 +232,72 @@ svg { width: 100%; height: 100%; }
 
 .equipment-bg { position: absolute; inset: 0; z-index: 0; }
 .equipment-slide {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  position: absolute; inset: 0;
   opacity: 0; transition: opacity 1.4s ease;
-  background:
-    radial-gradient(circle at 20% 25%, rgba(47,111,237,0.5), transparent 45%),
-    radial-gradient(circle at 82% 78%, rgba(242,169,0,0.3), transparent 42%),
-    linear-gradient(135deg, var(--navy-950), var(--navy-700));
+  background-size: cover;
+  background-position: center;
 }
 .equipment-slide.is-active { opacity: 1; }
-.equipment-slide-icon { width: min(60vh, 520px); height: min(60vh, 520px); color: rgba(255,255,255,0.08); }
 .equipment-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(180deg, rgba(6,15,38,0.55), rgba(6,15,38,0.85));
 }
 .equipment-inner { position: relative; z-index: 2; }
 
+.equipment-layout { display: flex; align-items: stretch; gap: 32px; margin-top: 46px; }
+
 .equipment-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 46px;
+  display: flex; flex-direction: column; gap: 10px; flex: 0 0 240px;
 }
 .equipment-item {
-  display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
+  text-align: left;
   background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); border-radius: var(--radius);
-  padding: 22px 14px; color: #e5eafb; font: inherit; font-size: 0.86rem; font-weight: 500; cursor: pointer;
+  padding: 14px 18px; color: #e5eafb; font: inherit; font-size: 0.86rem; font-weight: 500; cursor: pointer;
   transition: border-color var(--transition), background var(--transition), transform var(--transition);
 }
-.equipment-item:hover { transform: translateY(-4px); border-color: rgba(242,169,0,0.5); }
+.equipment-item:hover { transform: translateX(4px); border-color: rgba(242,169,0,0.5); }
 .equipment-item.is-active {
   background: rgba(242,169,0,0.14); border-color: var(--gold-500); color: #fff;
 }
-.equipment-icon { width: 36px; height: 36px; color: var(--gold-500); }
+
+.equipment-detail {
+  position: relative; flex: 1; min-height: 600px;
+  background: linear-gradient(135deg, rgba(6,15,38,0.55), rgba(6,15,38,0.3));
+  border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius);
+  padding: 36px;
+  display: flex; align-items: flex-end;
+}
+.equipment-detail-item {
+  position: absolute; inset: 36px; display: flex; flex-direction: column; justify-content: flex-end;
+  opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none;
+}
+.equipment-detail-item.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.equipment-detail-item h3 { color: #fff; font-size: 1.4rem; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.equipment-detail-item p { color: #e5eafb; font-size: 1rem; margin: 0; max-width: 56ch; text-shadow: 0 1px 8px rgba(0,0,0,0.55); }
+
+.equipment-gallery {
+  position: absolute; top: 0; right: 0; bottom: 130px; left: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 18px;
+}
+.equipment-gallery img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.35); box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+  display: block; min-height: 0;
+}
+
+@media (max-width: 760px) {
+  .equipment-layout { flex-direction: column; }
+  .equipment-grid { flex-direction: row; flex-wrap: wrap; flex: none; }
+  .equipment-item { flex: 1 1 calc(50% - 5px); }
+  .equipment-detail { padding: 24px; min-height: 360px; }
+  .equipment-detail-item { inset: 24px; }
+  .equipment-detail-item p { max-width: none; }
+  .equipment-gallery {
+    position: static; margin-top: 16px; width: auto; inset: auto;
+    grid-template-columns: repeat(4, 1fr); grid-template-rows: none; gap: 6px;
+  }
+  .equipment-gallery img { height: auto; aspect-ratio: 1 / 1; }
+}
 
 /* ============ Services ============ */
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 50px; }

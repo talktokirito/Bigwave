@@ -290,6 +290,7 @@
   // ---------- Our Equipment slider ----------
   var equipmentItems = Array.prototype.slice.call(document.querySelectorAll(".equipment-item"));
   var equipmentSlides = Array.prototype.slice.call(document.querySelectorAll(".equipment-slide"));
+  var equipmentDetails = Array.prototype.slice.call(document.querySelectorAll(".equipment-detail-item"));
 
   if (equipmentItems.length && equipmentSlides.length) {
     var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -306,6 +307,9 @@
         var active = item.dataset.target === targetId;
         item.classList.toggle("is-active", active);
         item.setAttribute("aria-pressed", String(active));
+      });
+      equipmentDetails.forEach(function (detail) {
+        detail.classList.toggle("is-active", detail.dataset.detail === targetId);
       });
     }
 
