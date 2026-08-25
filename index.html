@@ -377,13 +377,17 @@
 
       <div class="clients-grid" id="clientsGrid">
         <div class="client-group">
-          <h3 class="client-group-title">Facilities Management</h3>
-          <div class="client-group-grid">
+          <h3 class="client-group-title">
+            <button type="button" class="client-group-toggle" aria-expanded="false" aria-controls="clientsFmcGrid">
+              <span>Facilities Management</span>
+              <svg class="client-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="client-group-grid" id="clientsFmcGrid">
             <div class="client-chip">Farnek Services LLC</div>
-            <div class="client-chip">GBH International Facilities Management LLC</div>
+            <div class="client-chip client-hidden">GBH International Facilities Management LLC</div>
             <div class="client-chip">Reliance Facilities Management LLC</div>
-            <div class="client-chip client-hidden">Adeeb Electrical &amp; Electronics Services Company-Sole - Proprietorship LLC</div>
-            <div class="client-chip client-hidden">Al Thuriah Cleaning Services &amp; Maintenance LLC</div>
+            <div class="client-chip">Al Thuriah Cleaning Services &amp; Maintenance LLC</div>
             <div class="client-chip client-hidden">Coastal Owner Association Management Services Est.</div>
             <div class="client-chip client-hidden">Emirates International Property Services Sole Proprietorship LLC</div>
             <div class="client-chip client-hidden">Gold Tower-JLT-Represented by Infinity Strata Place Management LLC</div>
@@ -402,16 +406,22 @@
             <div class="client-chip client-hidden">SG Strata Global</div>
             <div class="client-chip client-hidden">Prime Owners Association Management Services LLC</div>
             <div class="client-chip client-hidden">Khanshaheb Facility Management</div>
-            <div class="client-chip client-hidden">IFM Facilities Management LLC</div>
+            <div class="client-chip">IFM Facilities Management LLC</div>
+            <div class="client-chip">Adeeb Electrical &amp; Electronics Services Company-Sole - Proprietorship LLC</div>
           </div>
         </div>
 
         <div class="client-group">
-          <h3 class="client-group-title">Hotels</h3>
-          <div class="client-group-grid">
+          <h3 class="client-group-title">
+            <button type="button" class="client-group-toggle" aria-expanded="false" aria-controls="clientsHotelsGrid">
+              <span>Hotels</span>
+              <svg class="client-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="client-group-grid" id="clientsHotelsGrid">
             <div class="client-chip">Gevora Hotel</div>
-            <div class="client-chip">Howard Johnson Plaza Hotel</div>
-            <div class="client-chip">Golden Tulip Media Hotel</div>
+            <div class="client-chip client-hidden">Howard Johnson Plaza Hotel</div>
+            <div class="client-chip client-hidden">Golden Tulip Media Hotel</div>
             <div class="client-chip client-hidden">Al Hayath Hotel Apartments</div>
             <div class="client-chip client-hidden">Curtyard By Marriyott Al Barsha</div>
             <div class="client-chip client-hidden">Curtyard By Marriyott World Trade Centre</div>
@@ -424,11 +434,10 @@
             <div class="client-chip client-hidden">Grand Stay Homes Jumeirah Garden</div>
             <div class="client-chip client-hidden">Lotus Grand Hotel Deira</div>
             <div class="client-chip client-hidden">Mercure Hotel Suites &amp; Apartments FZ-LLC</div>
-            <div class="client-chip client-hidden">Millennium Place Barsha Heights Hotel &amp; Apartments FZ-LLC</div>
             <div class="client-chip client-hidden">Millennium Place Marina Hotel LLC</div>
             <div class="client-chip client-hidden">Marriott Marquis Hotel (BR of West F5 Investment LLC)</div>
             <div class="client-chip client-hidden">Ramee Group of Hotels &amp; Resorts</div>
-            <div class="client-chip client-hidden">Residence INN by Marriott LLC</div>
+            <div class="client-chip">Residence INN by Marriott LLC</div>
             <div class="client-chip client-hidden">Saffron Hotel LLC</div>
             <div class="client-chip client-hidden">Samaya Hotel Resorts</div>
             <div class="client-chip client-hidden">The S. Hotel Al Barsha LLC</div>
@@ -446,87 +455,106 @@
             <div class="client-chip client-hidden">Millennium Palace Marina Hotel LLC</div>
             <div class="client-chip client-hidden">Nejoum Al Emarate Hotel LLC</div>
             <div class="client-chip client-hidden">Oyo Proptech Hotel Management LLC</div>
-            <div class="client-chip client-hidden">Radssion Red Hotel Dubai Oasis</div>
+            <div class="client-chip">Radssion Red Hotel Dubai Oasis</div>
             <div class="client-chip client-hidden">Ramee Royal Hotel</div>
             <div class="client-chip client-hidden">Regent Palace Hotel LLC</div>
             <div class="client-chip client-hidden">Renaissance Business Bay Hotel Dubai</div>
-            <div class="client-chip client-hidden">Rotana Hotel LLC - Park View Hotel</div>
+            <div class="client-chip">Rotana Hotel LLC - Park View Hotel</div>
             <div class="client-chip client-hidden">Royal Tulip Hotel</div>
             <div class="client-chip client-hidden">RTS Business Bay Hotel LLC</div>
             <div class="client-chip client-hidden">S19 Hotel Al Jadaff LLC</div>
             <div class="client-chip client-hidden">Signature 1 Hotel</div>
             <div class="client-chip client-hidden">Signature Hotel Apartments &amp; Spa</div>
             <div class="client-chip client-hidden">Signature Hotel LLC</div>
+            <div class="client-chip">Millennium Place Barsha Heights Hotel &amp; Apartments FZ-LLC</div>
           </div>
         </div>
 
         <div class="client-group">
-          <h3 class="client-group-title">Owners Associations</h3>
-          <div class="client-group-grid">
+          <h3 class="client-group-title">
+            <button type="button" class="client-group-toggle" aria-expanded="false" aria-controls="clientsOamGrid">
+              <span>Owners Associations</span>
+              <svg class="client-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="client-group-grid" id="clientsOamGrid">
             <div class="client-chip">Mansions Owners Association Management</div>
-            <div class="client-chip">Emirates National Investments</div>
+            <div class="client-chip">Clarity Owners Association Management l.l.c</div>
+            <div class="client-chip client-hidden">Emirates National Investments</div>
             <div class="client-chip">Hype Owner Association Management Services</div>
             <div class="client-chip client-hidden">Bunat Al Mustaqbal Owners Association Administrative Supervision</div>
             <div class="client-chip client-hidden">Catch Residence-J.V.C.-Represented by Infinity Strata Management LLC</div>
-            <div class="client-chip client-hidden">Rose Continental Owners Association Management Co. LLC</div>
+            <div class="client-chip">Rose Continental Owners Association Management Co. LLC</div>
             <div class="client-chip client-hidden">(Shereena Residence A to C)</div>
           </div>
         </div>
 
-        <div class="client-group">
-          <h3 class="client-group-title">Real Estate</h3>
-          <div class="client-group-grid">
-            <div class="client-chip">Damas Real Estate LLC</div>
-            <div class="client-chip">Aranco Real Estate</div>
-            <div class="client-chip">Bin Ham Properties LLC</div>
-            <div class="client-chip client-hidden">Ali Obaid Bakhit Belresheed Alktebi</div>
-            <div class="client-chip client-hidden">Dubai Building Cooperative Society</div>
-            <div class="client-chip client-hidden">Lootha Real Estate Development LLC</div>
-            <div class="client-chip client-hidden">Mohammad Aqil Al Zarooni Real Estate LLC</div>
-            <div class="client-chip client-hidden">Mohammed Salem Musallem Bin Ham Alameri</div>
-            <div class="client-chip client-hidden">Obaid Ali Obaid Belresheed Alktebi</div>
-            <div class="client-chip client-hidden">Potential Real Estate LLC</div>
-            <div class="client-chip client-hidden">S B R Investment LLC-(Al Zomoroda Tower-A &amp; B)</div>
-            <div class="client-chip client-hidden">Salem Ahmed Abdullah Al Moosa</div>
+        <div class="clients-extra-groups" id="clientsExtraGroups" hidden>
+          <div class="client-group">
+            <h3 class="client-group-title">
+              <button type="button" class="client-group-toggle" aria-expanded="false" aria-controls="clientsRealEstateGrid">
+                <span>Real Estate</span>
+                <svg class="client-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="client-group-grid" id="clientsRealEstateGrid">
+              <div class="client-chip">Damas Real Estate LLC</div>
+              <div class="client-chip">Aranco Real Estate</div>
+              <div class="client-chip">Bin Ham Properties LLC</div>
+              <div class="client-chip client-hidden">Ali Obaid Bakhit Belresheed Alktebi</div>
+              <div class="client-chip client-hidden">Dubai Building Cooperative Society</div>
+              <div class="client-chip client-hidden">Lootha Real Estate Development LLC</div>
+              <div class="client-chip client-hidden">Mohammad Aqil Al Zarooni Real Estate LLC</div>
+              <div class="client-chip client-hidden">Mohammed Salem Musallem Bin Ham Alameri</div>
+              <div class="client-chip client-hidden">Obaid Ali Obaid Belresheed Alktebi</div>
+              <div class="client-chip client-hidden">Potential Real Estate LLC</div>
+              <div class="client-chip client-hidden">S B R Investment LLC-(Al Zomoroda Tower-A &amp; B)</div>
+              <div class="client-chip client-hidden">Salem Ahmed Abdullah Al Moosa</div>
+            </div>
           </div>
-        </div>
 
-        <div class="client-group">
-          <h3 class="client-group-title">Technical Services</h3>
-          <div class="client-group-grid">
-            <div class="client-chip">Nigma Lifts Installation &amp; Maintenance Co. LLC</div>
-            <div class="client-chip">Golden Jaguar Building Maintenance LLC</div>
-            <div class="client-chip">Skywork Scandinavia Building Cleaning Services LLC</div>
-            <div class="client-chip client-hidden">Alnisf Equipment Co. LLC</div>
-            <div class="client-chip client-hidden">Brand Plus Sign LLC</div>
-            <div class="client-chip client-hidden">Eastern Coast Building Maintenance LLC</div>
-            <div class="client-chip client-hidden">Fast &amp; Memorable Technical Services</div>
-            <div class="client-chip client-hidden">Fast Building</div>
-            <div class="client-chip client-hidden">Graphics HUB LLC</div>
-            <div class="client-chip client-hidden">HI Tech Property Management Sole Prop. Ship LLC</div>
-            <div class="client-chip client-hidden">Kasten Technical Service L.L.C.</div>
-            <div class="client-chip client-hidden">MDS Site &amp; Power Solutions LLC</div>
-            <div class="client-chip client-hidden">Makeen Technical Services LLC</div>
-            <div class="client-chip client-hidden">Qbel Technical Services LLC</div>
-            <div class="client-chip client-hidden">Red Bana Technical Services LLC</div>
-            <div class="client-chip client-hidden">RFM Technical Service LLC</div>
-            <div class="client-chip client-hidden">Spot Lite Sign Board Manufacturing LLC</div>
-            <div class="client-chip client-hidden">T.M.C. Services LLC</div>
+          <div class="client-group">
+            <h3 class="client-group-title">
+              <button type="button" class="client-group-toggle" aria-expanded="false" aria-controls="clientsTechnicalGrid">
+                <span>Technical Services</span>
+                <svg class="client-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="client-group-grid" id="clientsTechnicalGrid">
+              <div class="client-chip">Nigma Lifts Installation &amp; Maintenance Co. LLC</div>
+              <div class="client-chip">Golden Jaguar Building Maintenance LLC</div>
+              <div class="client-chip">Skywork Scandinavia Building Cleaning Services LLC</div>
+              <div class="client-chip client-hidden">Alnisf Equipment Co. LLC</div>
+              <div class="client-chip client-hidden">Brand Plus Sign LLC</div>
+              <div class="client-chip client-hidden">Eastern Coast Building Maintenance LLC</div>
+              <div class="client-chip client-hidden">Fast &amp; Memorable Technical Services</div>
+              <div class="client-chip client-hidden">Fast Building</div>
+              <div class="client-chip client-hidden">Graphics HUB LLC</div>
+              <div class="client-chip client-hidden">HI Tech Property Management Sole Prop. Ship LLC</div>
+              <div class="client-chip client-hidden">Kasten Technical Service L.L.C.</div>
+              <div class="client-chip client-hidden">MDS Site &amp; Power Solutions LLC</div>
+              <div class="client-chip client-hidden">Makeen Technical Services LLC</div>
+              <div class="client-chip client-hidden">Qbel Technical Services LLC</div>
+              <div class="client-chip client-hidden">Red Bana Technical Services LLC</div>
+              <div class="client-chip client-hidden">RFM Technical Service LLC</div>
+              <div class="client-chip client-hidden">Spot Lite Sign Board Manufacturing LLC</div>
+              <div class="client-chip client-hidden">T.M.C. Services LLC</div>
+            </div>
           </div>
-        </div>
 
-        <div class="client-group">
-          <h3 class="client-group-title">Hospitals</h3>
-          <div class="client-group-grid">
-            <div class="client-chip">NMC Royal Hospital Ltd.</div>
-            <div class="client-chip">NMC Specialty Hospital LTD</div>
+          <div class="client-group">
+            <h3 class="client-group-title">Hospitals</h3>
+            <div class="client-group-grid">
+              <div class="client-chip">NMC Royal Hospital Ltd.</div>
+              <div class="client-chip">NMC Specialty Hospital LTD</div>
+            </div>
           </div>
-        </div>
 
-        <div class="client-group">
-          <h3 class="client-group-title">Theme Park</h3>
-          <div class="client-group-grid">
-            <div class="client-chip">IMG Theme Park LLC (IMG World of Adventure, Dubai, UAE)</div>
+          <div class="client-group">
+            <h3 class="client-group-title">Theme Park</h3>
+            <div class="client-group-grid">
+              <div class="client-chip">IMG Theme Park LLC (IMG World of Adventure, Dubai, UAE)</div>
+            </div>
           </div>
         </div>
       </div>
